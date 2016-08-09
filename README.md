@@ -45,3 +45,8 @@ danfe.Visualizar();
 //danfe.ExibirDesign();
 
 ```
+
+![](http://www.zeusautomacao.com.br/imagens/git/08.png)
+![](http://www.zeusautomacao.com.br/imagens/git/09.png)
+![](http://www.zeusautomacao.com.br/imagens/git/10.png)
+![](http://www.zeusautomacao.com.br/imagens/git/11.jpg)
