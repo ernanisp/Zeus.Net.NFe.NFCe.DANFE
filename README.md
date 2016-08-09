@@ -1,8 +1,8 @@
 # Zeus.Net.NFe.NFCe.DANFE
 
-Biblioteca gratuita para visualizar/imprimir/exportar o DANFE da NFe e NFCe, conforme regulamentados nos manuais disponíveis em http://www.nfe.fazenda.gov.br/portal/principal.aspx
+Biblioteca gratuita para visualizar/imprimir e exportar para PDF e outros formatos, o DANFE da NFCe, conforme regulamentados nos manuais disponíveis em http://www.nfe.fazenda.gov.br/portal/principal.aspx
 
-A biblioteca foi desenvolvida com o Visual Studio Community 2015, update 3 e é compatível com o Visual Studio Community 2013. Está licenciada sobre a LGPL.
+A biblioteca foi desenvolvida com o Visual Studio Community 2015, update 3, mas é compatível com o Visual Studio Community 2013. Está licenciada sobre a LGPL.
 
 Esta biblioteca utiliza o FastReports.NET para impressão.
 Uma versão demo do FastReport pode ser baixada em https://www.fast-report.com/pt/product/fast-report-net/
@@ -12,8 +12,8 @@ Instruções para compilar a solução
 No visual studio, abra o arquivo "Zeus.Net.NFe.NFCe.DANFE.sln", defina o "NFe.AppTeste" como projeto de inicialização, compile e execute.
 Projetos na Solução
 
-NFe.AppTeste: Aplicação em wpf com demonstração de uso da biblioteca;
-NFe.Impressao: Biblioteca responsável por montar a impressão do DANFE.
+NFe.Danfe.AppTeste: Aplicação em wpf com demonstração de uso da biblioteca;
+NFe.Danfe.Fast: Biblioteca responsável por montar a impressão do DANFE.
 
 **TODO:**
 - [x] Implementar impressão do DANFE de NFCe Mini. Concluído em 09/09/2015;
