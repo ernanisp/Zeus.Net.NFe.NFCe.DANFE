@@ -39,7 +39,7 @@ Exemplo de impressão do DANFE da NFCe utilizando a bilbioteca:
 
 ```cs
 var proc = new nfeProc().CarregarDeArquivoXml(Caminho_do_arquivo_XML);
-var danfe = new DanfeFrNfce(proc, new ConfiguracaoDanfeNfce(NfceDetalheVendaNormal.UmaLinha, NfceDetalheVendaContigencia.UmaLinha, "00001", "XXXXXXXXXXXXXXXXXXXXXXXXXX", null/*Logomarca em byte[]*/));
+var danfe = new DanfeFrNfce(proc, new ConfiguracaoDanfeNfce(NfceDetalheVendaNormal.UmaLinha, NfceDetalheVendaContigencia.UmaLinha, null/*Logomarca em byte[]*/), "00001", "XXXXXXXXXXXXXXXXXXXXXXXXXX");
 danfe.Visualizar();
 //danfe.Imprimir();
 //danfe.ExibirDesign();
