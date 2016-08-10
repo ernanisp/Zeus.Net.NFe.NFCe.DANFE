@@ -13,14 +13,14 @@ No visual studio, abra o arquivo "Zeus.Net.NFe.NFCe.DANFE.sln", defina o "NFe.Ap
 Projetos na Solução
 
 NFe.Danfe.AppTeste: Aplicação em wpf com demonstração de uso da biblioteca;
-NFe.Danfe.Base: Biblioteca base para todas as bilbiotecas que implementam a impressão do DANFE, idepentende do fornecedor de relatórios utilizado;
+NFe.Danfe.Base: Biblioteca base para todas as bibliotecas que implementam a impressão do DANFE, idepentende do fornecedor de relatórios utilizado;
 NFe.Danfe.Fast: Biblioteca responsável por montar a impressão do DANFE em FastReports.
 
 **TODO:**
 - [x] Implementar impressão do DANFE de NFCe Mini. Concluído em 09/09/2015;
 - [ ] Implementar impressão do DANFE de NFCe A4;
 - [ ] Implementar impressão do DANFE de NFe;
-- [ ] Implementar possíveis mudanças no Manual de Padrões Padrões Técnicos do DANFE-NFC-e e QR Code, versão 3.3 que será obrigatório a
+- [ ] Implementar possíveis mudanças no Manual de Padrões Técnicos do DANFE-NFC-e e QR Code, versão 3.3 que será obrigatório a
  partir de  01/09/2016;
 - [ ] Alterações no DANFE de NFCe (Adicionar opção para definir o tamanho da logomarca);
 - [x] Adicionar opção para determinar se o desconto por item deve ser impresso.
@@ -31,12 +31,12 @@ NFe.Danfe.Fast: Biblioteca responsável por montar a impressão do DANFE em Fast
 - Foi implementado em 09/09/2015 a impressão do NFCe em Fast Reports (https://www.fast-report.com/pt/product/fast-report-net/);
 - Os recursos implementados na biblioteca de impressão foram: Visualização e impressão direta, além dos recursos de exportação para pdf, xls, doc, etc. do próprio Fast Reports;
 - A impressão segue rigorosamente o Manual de Especificacoes Tecnicas do DANFE NFC-e QRCode Versao 3.2);
-- Obs: Visando abranger o maior número possível de impressoras térmicas, a impressão é feita via spooler do windows. A impressão térmica via spooler, dependendo da impressora, pode sair com má qualidade. Para sanar isso, no relatório são utlizadas duas fontes condensadas que possuem boa legibilidade em tamanho pequeno, a saber a OpenSans e UbuntuCondensed, ambas de uso livre podendo ser obtidas em https://www.google.com/fonts;
+- Obs: Visando abranger o maior número possível de impressoras térmicas, a impressão é feita via spooler do windows. A impressão térmica via spooler, dependendo da impressora, pode sair com má qualidade. Para sanar isso, no relatório são utilizadas duas fontes condensadas que possuem boa legibilidade em tamanho pequeno, a saber a OpenSans e UbuntuCondensed, ambas de uso livre podendo ser obtidas em https://www.google.com/fonts;
 - As fontes estão anexadas ao projeto em NFe.Impressao\NFCe\Fontes;
 - Instale as fontes informadas no PC que for imprimir o DANFE da NFCe;
 - Impressão testada e funcionando 100% nas impressoras Bematech MP-4200, Daruma DR700 e Epson TM-81 e TM-20.
 
-Exemplo de impressão do DANFE da NFCe utilizando a bilbioteca:
+Exemplo de impressão do DANFE da NFCe utilizando a biblioteca:
 
 ```cs
 var proc = new nfeProc().CarregarDeArquivoXml(Caminho_do_arquivo_XML);
