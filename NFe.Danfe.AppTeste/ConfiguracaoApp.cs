@@ -32,7 +32,7 @@
 /********************************************************************************/
 
 using System.IO;
-using NFe.Danfe.Fast;
+using NFe.Danfe.Base;
 using NFe.Danfe.Fast.NFCe;
 using NFe.Utils;
 

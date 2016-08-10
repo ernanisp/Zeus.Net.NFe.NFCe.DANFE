@@ -34,20 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NFe.Classes">
-      <HintPath>..\..\Zeus.Net.NFe.NFCe\NFe.Utils\bin\Debug\NFe.Classes.dll</HintPath>
+    <Reference Include="NFe.Classes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.171\lib\net40\NFe.Classes.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NFe.Utils">
-      <HintPath>..\..\Zeus.Net.NFe.NFCe\NFe.Utils\bin\Debug\NFe.Utils.dll</HintPath>
+    <Reference Include="NFe.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.171\lib\net40\NFe.Utils.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -94,6 +92,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,6 +100,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NFe.Danfe.Base\NFe.Danfe.Base.csproj">
+      <Project>{80c6093c-47d5-41a1-9fa0-e218e82fa666}</Project>
+      <Name>NFe.Danfe.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nfe.Danfe.Fast\NFe.Danfe.Fast.csproj">
       <Project>{b7f6a2ff-fd0e-4b44-82b3-371605cd0510}</Project>
       <Name>NFe.Danfe.Fast</Name>

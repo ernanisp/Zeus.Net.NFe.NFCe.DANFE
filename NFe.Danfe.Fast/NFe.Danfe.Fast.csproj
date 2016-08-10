@@ -39,27 +39,21 @@
       <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net\FastReport.dll</HintPath>
     </Reference>
     <Reference Include="NFe.Classes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Zeus.Net.NFe.NFCe\NFe.Classes\bin\Debug\NFe.Classes.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.171\lib\net40\NFe.Classes.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NFe.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Zeus.Net.NFe.NFCe\NFe.Utils\bin\Debug\NFe.Utils.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.171\lib\net40\NFe.Utils.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfiguracaoDanfe.cs" />
     <Compile Include="DanfeBase.cs" />
     <Compile Include="NFCe\ConfiguracaoDanfeNfce.cs" />
-    <Compile Include="Enumns.cs" />
     <Compile Include="NFCe\DanfeFrNfce.cs" />
     <Compile Include="NFe\ConfiguracaoDanfeNfe.cs" />
     <Compile Include="NFe\DanfeFrNfe.cs" />
@@ -73,6 +67,7 @@
   <ItemGroup>
     <None Include="NFCe\NFCe.frx" />
     <None Include="NFe\NFe.frx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="NFCe\Fontes\LeiaMe.txt" />
@@ -94,6 +89,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NFe.Danfe.Base\NFe.Danfe.Base.csproj">
+      <Project>{80c6093c-47d5-41a1-9fa0-e218e82fa666}</Project>
+      <Name>NFe.Danfe.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

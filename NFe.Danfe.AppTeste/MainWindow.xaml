@@ -4,7 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:appTeste="clr-namespace:NFe.Danfe.AppTeste"
-    xmlns:impressao="clr-namespace:NFe.Danfe.Fast;assembly=Nfe.Danfe.Fast"
+    xmlns:base="clr-namespace:NFe.Danfe.Base;assembly=NFe.Danfe.Base"
     mc:Ignorable="d"
     x:Class="NFe.Danfe.AppTeste.MainWindow"
     Title="Zeus Automação - Exemplo de uso da biblioteca de NFe/NFC-e"
@@ -29,15 +29,15 @@
                                     <RadioButton Content="Não imprimir"
                                                      HorizontalAlignment="Left" VerticalAlignment="Top"
                                                      Margin="8,13,0,0"
-                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaNormal, ConverterParameter={x:Static impressao:NfceDetalheVendaNormal.NaoImprimir}, Converter={StaticResource EnumParaBool}}" />
+                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaNormal, ConverterParameter={x:Static base:NfceDetalheVendaNormal.NaoImprimir}, Converter={StaticResource EnumParaBool}}" />
                                     <RadioButton Content="Uma Linha"
                                                      HorizontalAlignment="Left" VerticalAlignment="Top"
                                                      Margin="108,13,0,0"
-                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaNormal, ConverterParameter={x:Static impressao:NfceDetalheVendaNormal.UmaLinha}, Converter={StaticResource EnumParaBool}}" />
+                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaNormal, ConverterParameter={x:Static base:NfceDetalheVendaNormal.UmaLinha}, Converter={StaticResource EnumParaBool}}" />
                                     <RadioButton Content="Duas Linhas"
                                                      HorizontalAlignment="Left" VerticalAlignment="Top"
                                                      Margin="190,13,0,0"
-                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaNormal, ConverterParameter={x:Static impressao:NfceDetalheVendaNormal.DuasLinhas}, Converter={StaticResource EnumParaBool}}" />
+                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaNormal, ConverterParameter={x:Static base:NfceDetalheVendaNormal.DuasLinhas}, Converter={StaticResource EnumParaBool}}" />
                                 </Grid>
                             </GroupBox>
                             <GroupBox Header="Contigência - Impressão dos produtos"
@@ -46,11 +46,11 @@
                                     <RadioButton Content="Uma Linha"
                                                      HorizontalAlignment="Left" VerticalAlignment="Top"
                                                      Margin="8,13,0,0"
-                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaContigencia, ConverterParameter={x:Static impressao:NfceDetalheVendaContigencia.UmaLinha}, Converter={StaticResource EnumParaBool}}" />
+                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaContigencia, ConverterParameter={x:Static base:NfceDetalheVendaContigencia.UmaLinha}, Converter={StaticResource EnumParaBool}}" />
                                     <RadioButton Content="Duas Linhas"
                                                      HorizontalAlignment="Left" VerticalAlignment="Top"
                                                      Margin="108,13,0,0"
-                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaContigencia, ConverterParameter={x:Static impressao:NfceDetalheVendaContigencia.DuasLinhas}, Converter={StaticResource EnumParaBool}}" />
+                                                     IsChecked="{Binding ConfiguracaoDanfeNfce.DetalheVendaContigencia, ConverterParameter={x:Static base:NfceDetalheVendaContigencia.DuasLinhas}, Converter={StaticResource EnumParaBool}}" />
                                 </Grid>
                             </GroupBox>
 
@@ -119,7 +119,7 @@
 
             </GroupBox>
 
-            <GroupBox Header="Testes" HorizontalAlignment="Stretch">
+            <GroupBox Header="Testes FastReport" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal">
                     <Button Name="BtnNfeDanfeA4" Content="DANFE NFe A4" HorizontalAlignment="Left"
                             VerticalAlignment="Top" Width="177" Margin="5,10" Click="BtnNfeDanfeA4_Click" />

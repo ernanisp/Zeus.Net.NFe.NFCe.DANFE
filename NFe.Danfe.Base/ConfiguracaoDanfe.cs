@@ -31,18 +31,29 @@
 /* Rua Comendador Francisco josé da Cunha, 111 - Itabaiana - SE - 49500-000     */
 /********************************************************************************/
 
-namespace NFe.Danfe.Fast
-{
-    public enum NfceDetalheVendaNormal
-    {
-        NaoImprimir = 0,
-        UmaLinha = 1,
-        DuasLinhas = 2
-    }
+using System.Drawing;
+using System.IO;
 
-    public enum NfceDetalheVendaContigencia
+namespace NFe.Danfe.Base
+{
+    public class ConfiguracaoDanfe
     {
-        UmaLinha = 1,
-        DuasLinhas = 2
+        /// <summary>
+        /// Logomarca do emitente a ser impressa no DANFE da NFCe
+        /// </summary>
+        public byte[] Logomarca { get; set; }
+
+        /// <summary>
+        /// Retorna um objeto do tipo Image a partir da logo armazenada na propriedade Logomarca 
+        /// </summary>
+        /// <returns></returns>
+        public Image ObterLogo()
+        {
+            if (Logomarca == null)
+                return null;
+            var ms = new MemoryStream(Logomarca);
+            var image = Image.FromStream(ms);
+            return image;
+        }
     }
 }
