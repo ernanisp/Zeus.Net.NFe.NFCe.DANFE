@@ -13,7 +13,8 @@ No visual studio, abra o arquivo "Zeus.Net.NFe.NFCe.DANFE.sln", defina o "NFe.Ap
 Projetos na Solução
 
 NFe.Danfe.AppTeste: Aplicação em wpf com demonstração de uso da biblioteca;
-NFe.Danfe.Fast: Biblioteca responsável por montar a impressão do DANFE.
+NFe.Danfe.Base: Biblioteca base para todas as bilbiotecas que implementam a impressão do DANFE, idepentende do fornecedor de relatórios utilizado;
+NFe.Danfe.Fast: Biblioteca responsável por montar a impressão do DANFE em FastReports.
 
 **TODO:**
 - [x] Implementar impressão do DANFE de NFCe Mini. Concluído em 09/09/2015;
