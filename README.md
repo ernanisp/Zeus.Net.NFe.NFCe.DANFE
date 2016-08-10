@@ -7,11 +7,11 @@ A biblioteca foi desenvolvida com o Visual Studio Community 2015, update 3, mas 
 Esta biblioteca utiliza o FastReports.NET para impressão.
 Uma versão demo do FastReport pode ser baixada em https://www.fast-report.com/pt/product/fast-report-net/
 
-Instruções para compilar a solução
+**Instruções para compilar a solução**
 
 No visual studio, abra o arquivo "Zeus.Net.NFe.NFCe.DANFE.sln", defina o "NFe.AppTeste" como projeto de inicialização, compile e execute.
-Projetos na Solução
 
+**Projetos na Solução**
 - NFe.Danfe.AppTeste: Aplicação em wpf com demonstração de uso da biblioteca;
 - NFe.Danfe.Base: Biblioteca base para todas as bibliotecas que implementam a impressão do DANFE, idepentende do fornecedor de relatórios utilizado;
 - NFe.Danfe.Fast: Biblioteca responsável por montar a impressão do DANFE em FastReports.
@@ -36,7 +36,7 @@ Projetos na Solução
 - Instale as fontes informadas no PC que for imprimir o DANFE da NFCe;
 - Impressão testada e funcionando 100% nas impressoras Bematech MP-4200, Daruma DR700 e Epson TM-81 e TM-20.
 
-Exemplo de impressão do DANFE da NFCe utilizando a biblioteca:
+**Exemplo de impressão do DANFE da NFCe utilizando a biblioteca:**
 
 ```cs
 var proc = new nfeProc().CarregarDeArquivoXml(Caminho_do_arquivo_XML);
@@ -47,6 +47,7 @@ danfe.Visualizar();
 
 ```
 
+**Telas do aplicativo de demonstração de Uso da biblioteca:**
 
 ![](http://www.zeusautomacao.com.br/imagens/git/07.png)
 ![](http://www.zeusautomacao.com.br/imagens/git/08.png)
