@@ -33,55 +33,40 @@
 
 using System.IO;
 using FastReport;
-using FastReport.Barcode;
 using NFe.Classes;
-using NFe.Classes.Informacoes.Identificacao.Tipos;
-using NFe.Utils.InformacoesSuplementares;
 
-namespace NFe.Danfe.Fast.NFCe
+namespace NFe.Danfe.Fast.NFe.FastReports
 {
     /// <summary>
-    /// Classe reponsável pela impressão do DANFE da NFCe em Fast Reports
+    /// Classe reponsável pela impressão do DANFE da NFe em Fast Reports
     /// </summary>
-    public class DanfeFrNfce: DanfeBase
+    public class DanfeFrNfe : DanfeBase
     {
         /// <summary>
-        /// Construtor da classe reponsável pela impressão do DANFE da NFCe em Fast Reports
+        /// Construtor da classe reponsável pela impressão do DANFE da NFe em Fast Reports
         /// </summary>
         /// <param name="proc">Objeto do tipo nfeProc</param>
-        /// <param name="configuracaoDanfeNfce">Objeto do tipo ConfiguracaoDanfeNfce contendo as definições de impressão</param>
-        /// <param name="cIdToken">Identificador do CSC – Código de Segurança do Contribuinte no Banco de Dados da SEFAZ</param>
-        /// <param name="csc">Código de Segurança do Contribuinte(antigo Token)</param>
-        public DanfeFrNfce(nfeProc proc, ConfiguracaoDanfeNfce configuracaoDanfeNfce, string cIdToken, string csc)
+        /// <param name="configuracaoDanfeNfe">Objeto do tipo configuracaoDanfeNfe contendo as definições de impressão</param>
+        public DanfeFrNfe(nfeProc proc, ConfiguracaoDanfeNfe configuracaoDanfeNfe)
         {
             #region Define as varíaveis que serão usadas no relatório (dúvidas a respeito do fast reports consulte a documentação em https://www.fast-report.com/pt/product/fast-report-net/documentation/)
 
             Relatorio = new Report();
-            Relatorio.RegisterData(new[] { proc }, "NFCe", 20);
-            Relatorio.GetDataSource("NFCe").Enabled = true;
-            Relatorio.Load(new MemoryStream(Properties.Resources.NFCe));
-            Relatorio.SetParameterValue("NfceDetalheVendaNormal", configuracaoDanfeNfce.DetalheVendaNormal);
-            Relatorio.SetParameterValue("NfceDetalheVendaContigencia", configuracaoDanfeNfce.DetalheVendaContigencia);
-            Relatorio.SetParameterValue("NfceImprimeDescontoItem", configuracaoDanfeNfce.ImprimeDescontoItem);
-            ((PictureObject) Relatorio.FindObject("poEmitLogo")).Image = configuracaoDanfeNfce.ObterLogo();
-            ((TextObject)Relatorio.FindObject("txtUrl")).Text = proc.NFe.infNFeSupl.ObterUrl(proc.NFe.infNFe.ide.tpAmb, proc.NFe.infNFe.ide.cUF, TipoUrlConsultaPublica.UrlConsulta);
-            ((BarcodeObject)Relatorio.FindObject("bcoQrCode")).Text = proc.NFe.infNFeSupl  == null ? proc.NFe.infNFeSupl.ObterUrlQrCode(proc.NFe, cIdToken, csc) : proc.NFe.infNFeSupl.qrCode;
-
-            //Segundo o Manual de Padrões Padrões Técnicos do DANFE - NFC - e e QR Code, versão 3.2, página 9, nos casos de emissão em contigência deve ser impresso uma segunda cópia como via do estabelecimento
-            Relatorio.PrintSettings.Copies = proc.NFe.infNFe.ide.tpEmis == TipoEmissao.teNormal ? 1 : 2;
+            Relatorio.RegisterData(new[] { proc }, "NFe", 20);
+            Relatorio.GetDataSource("NFe").Enabled = true;
+            Relatorio.Load(new MemoryStream(Properties.Resources.NFe));
+            ((PictureObject)Relatorio.FindObject("poEmitLogo")).Image = configuracaoDanfeNfe.ObterLogo();
 
             #endregion
         }
 
         /// <summary>
-        /// Construtor da classe reponsável pela impressão do DANFE da NFCe em Fast Reports.
+        /// Construtor da classe reponsável pela impressão do DANFE da NFe em Fast Reports.
         /// Use esse construtor apenas para impressão em contigência, já que neste modo ainda não é possível obter o grupo protNFe 
         /// </summary>
         /// <param name="nfe">Objeto do tipo NFe</param>
-        /// <param name="configuracaoDanfeNfce">Objeto do tipo ConfiguracaoDanfeNfce contendo as definições de impressão</param>
-        /// <param name="cIdToken">Identificador do CSC – Código de Segurança do Contribuinte no Banco de Dados da SEFAZ</param>
-        /// <param name="csc">Código de Segurança do Contribuinte(antigo Token)</param>
-        public DanfeFrNfce(Classes.NFe nfe, ConfiguracaoDanfeNfce configuracaoDanfeNfce, string cIdToken, string csc) : this(new nfeProc() { NFe = nfe }, configuracaoDanfeNfce, cIdToken, csc)
+        /// <param name="configuracaoDanfeNfe">Objeto do tipo ConfiguracaoDanfeNfe contendo as definições de impressão</param>
+        public DanfeFrNfe(Classes.NFe nfe, ConfiguracaoDanfeNfe configuracaoDanfeNfe) : this(new nfeProc() { NFe = nfe }, configuracaoDanfeNfe)
         {
         }
     }

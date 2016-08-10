@@ -73,6 +73,16 @@ namespace NFe.Danfe.Fast.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] NFe {
+            get {
+                object obj = ResourceManager.GetObject("NFe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] OpenSans_CondBold {
             get {
                 object obj = ResourceManager.GetObject("OpenSans_CondBold", resourceCulture);

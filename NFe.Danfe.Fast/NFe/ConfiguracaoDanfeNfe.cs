@@ -31,40 +31,20 @@
 /* Rua Comendador Francisco josé da Cunha, 111 - Itabaiana - SE - 49500-000     */
 /********************************************************************************/
 
-namespace NFe.Danfe.Fast.NFCe
+namespace NFe.Danfe.Fast.NFe
 {
-    public class ConfiguracaoDanfeNfce: ConfiguracaoDanfe
+    public class ConfiguracaoDanfeNfe : ConfiguracaoDanfe
     {
-
-        public ConfiguracaoDanfeNfce(NfceDetalheVendaNormal detalheVendaNormal, NfceDetalheVendaContigencia detalheVendaContigencia, byte[] logomarca = null, bool imprimeDescontoItem = false)
+        public ConfiguracaoDanfeNfe(byte[] logomarca = null)
         {
-            DetalheVendaNormal = detalheVendaNormal;
-            DetalheVendaContigencia = detalheVendaContigencia;
             Logomarca = logomarca;
-            ImprimeDescontoItem = imprimeDescontoItem;
         }
 
         /// <summary>
         /// Construtor sem parâmetros para serialização
         /// </summary>
-        private ConfiguracaoDanfeNfce()
+        private ConfiguracaoDanfeNfe()
         {
         }
-
-        /// <summary>
-        /// Modo de impressão do detalhe (produtos) para NFCes emitidos em ambiente Normal
-        /// </summary>
-        public NfceDetalheVendaNormal DetalheVendaNormal { get; set; }
-
-        /// <summary>
-        /// Modo de impressão do detalhe (produtos) para NFCes emitidos em ambiente de Homologação
-        /// Nesse modo a informação do detalhe é obrigatória. Vide Manual de Padrões Padrões Técnicos do DANFE-NFC-e e QR Code, versão 3.2
-        /// </summary>
-        public NfceDetalheVendaContigencia DetalheVendaContigencia { get; set; }
-
-        /// <summary>
-        /// Determina se o desconto do item será impresso no DANTE, quando houver
-        /// </summary>
-        public bool ImprimeDescontoItem { get; set; }
     }
 }

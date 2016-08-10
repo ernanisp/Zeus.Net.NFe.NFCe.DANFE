@@ -41,6 +41,8 @@ using System.Windows.Media.Imaging;
 using NFe.Danfe.Fast.NFCe;
 using NFe.Classes;
 using NFe.Classes.Informacoes.Identificacao.Tipos;
+using NFe.Danfe.Fast.NFe;
+using NFe.Danfe.Fast.NFe.FastReports;
 using NFe.Utils;
 using NFe.Utils.NFe;
 
@@ -184,6 +186,39 @@ namespace NFe.Danfe.AppTeste
                 danfe.Visualizar();
                 //danfe.Imprimir();
                 //danfe.ExibirDesign();
+                //danfe.ExportarPdf(@"d:\teste.pdf");
+
+                #endregion
+
+            }
+            catch (Exception ex)
+            {
+                if (!string.IsNullOrEmpty(ex.Message))
+                    Funcoes.Mensagem(ex.Message, "Erro", MessageBoxButton.OK);
+            }
+        }
+
+        private void BtnNfeDanfeA4_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                #region Carrega um XML com nfeProc para a variável
+
+                var arquivoXml = Funcoes.BuscarArquivoXml();
+                if (string.IsNullOrEmpty(arquivoXml))
+                    return;
+                var proc = new nfeProc().CarregarDeArquivoXml(arquivoXml);
+                if (proc.NFe.infNFe.ide.mod != ModeloDocumento.NFe)
+                    throw new Exception("O XML informado não é um NFe!");
+
+                #endregion
+
+                #region Abre a visualização do relatório para impressão
+
+                var danfe = new DanfeFrNfe(proc, new ConfiguracaoDanfeNfe(_configuracoes.ConfiguracaoDanfeNfce.Logomarca));
+                //danfe.Visualizar();
+                //danfe.Imprimir();
+                danfe.ExibirDesign();
                 //danfe.ExportarPdf(@"d:\teste.pdf");
 
                 #endregion

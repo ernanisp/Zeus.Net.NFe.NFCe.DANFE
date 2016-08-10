@@ -31,40 +31,29 @@
 /* Rua Comendador Francisco josé da Cunha, 111 - Itabaiana - SE - 49500-000     */
 /********************************************************************************/
 
-namespace NFe.Danfe.Fast.NFCe
+using System.Drawing;
+using System.IO;
+
+namespace NFe.Danfe.Fast
 {
-    public class ConfiguracaoDanfeNfce: ConfiguracaoDanfe
+    public class ConfiguracaoDanfe
     {
+        /// <summary>
+        /// Logomarca do emitente a ser impressa no DANFE da NFCe
+        /// </summary>
+        public byte[] Logomarca { get; set; }
 
-        public ConfiguracaoDanfeNfce(NfceDetalheVendaNormal detalheVendaNormal, NfceDetalheVendaContigencia detalheVendaContigencia, byte[] logomarca = null, bool imprimeDescontoItem = false)
+        /// <summary>
+        /// Retorna um objeto do tipo Image a partir da logo armazenada na propriedade Logomarca 
+        /// </summary>
+        /// <returns></returns>
+        public Image ObterLogo()
         {
-            DetalheVendaNormal = detalheVendaNormal;
-            DetalheVendaContigencia = detalheVendaContigencia;
-            Logomarca = logomarca;
-            ImprimeDescontoItem = imprimeDescontoItem;
+            if (Logomarca == null)
+                return null;
+            var ms = new MemoryStream(Logomarca);
+            var image = Image.FromStream(ms);
+            return image;
         }
-
-        /// <summary>
-        /// Construtor sem parâmetros para serialização
-        /// </summary>
-        private ConfiguracaoDanfeNfce()
-        {
-        }
-
-        /// <summary>
-        /// Modo de impressão do detalhe (produtos) para NFCes emitidos em ambiente Normal
-        /// </summary>
-        public NfceDetalheVendaNormal DetalheVendaNormal { get; set; }
-
-        /// <summary>
-        /// Modo de impressão do detalhe (produtos) para NFCes emitidos em ambiente de Homologação
-        /// Nesse modo a informação do detalhe é obrigatória. Vide Manual de Padrões Padrões Técnicos do DANFE-NFC-e e QR Code, versão 3.2
-        /// </summary>
-        public NfceDetalheVendaContigencia DetalheVendaContigencia { get; set; }
-
-        /// <summary>
-        /// Determina se o desconto do item será impresso no DANTE, quando houver
-        /// </summary>
-        public bool ImprimeDescontoItem { get; set; }
     }
 }

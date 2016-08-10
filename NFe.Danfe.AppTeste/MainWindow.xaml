@@ -22,7 +22,7 @@
 
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Margin="0,0,10,0">
-                            
+
                             <GroupBox Header="Emissão Normal - Impressão dos produtos" Height="60"
                                           Margin="0,10,0,0">
                                 <Grid>
@@ -106,7 +106,8 @@
                                     </WrapPanel>
                                 </StackPanel>
                             </StackPanel>
-                        </GroupBox></StackPanel>
+                        </GroupBox>
+                    </StackPanel>
 
                     <DockPanel Dock="Bottom" Height="45">
                         <Button x:Name="BtnSalvar" Content="Salvar Configurações para arquivo" Width="203" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -120,10 +121,12 @@
 
             <GroupBox Header="Testes" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="DANFE NFCe Normal" HorizontalAlignment="Left"
-                            VerticalAlignment="Top" Width="177" Click="BtnNfceDanfe_Click" Margin="5,10" />
-                    <Button x:Name="BtnNfceDanfeOff" Content="DANFE NFCe Cont. Offline" HorizontalAlignment="Left"
-                            VerticalAlignment="Top" Width="177" Click="BtnNfceDanfeOff_Click" Margin="5,10" />
+                    <Button Name="BtnNfeDanfeA4" Content="DANFE NFe A4" HorizontalAlignment="Left"
+                            VerticalAlignment="Top" Width="177" Margin="5,10" Click="BtnNfeDanfeA4_Click" />
+                    <Button Name="BtnNfceDanfe" Content="DANFE NFCe Normal" HorizontalAlignment="Left"
+                    	VerticalAlignment="Top" Width="177" Click="BtnNfceDanfe_Click" Margin="5,10,5,0" />
+                    <Button Name="BtnNfceDanfeOff" Content="DANFE NFCe Cont. Offline" HorizontalAlignment="Left"
+                    	VerticalAlignment="Top" Width="177" Click="BtnNfceDanfeOff_Click" Margin="5,10,5,0" />
                 </StackPanel>
             </GroupBox>
 
