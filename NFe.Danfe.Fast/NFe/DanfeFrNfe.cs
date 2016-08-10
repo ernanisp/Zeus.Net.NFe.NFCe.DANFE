@@ -35,7 +35,7 @@ using System.IO;
 using FastReport;
 using NFe.Classes;
 
-namespace NFe.Danfe.Fast.NFe.FastReports
+namespace NFe.Danfe.Fast.NFe
 {
     /// <summary>
     /// Classe reponsável pela impressão do DANFE da NFe em Fast Reports

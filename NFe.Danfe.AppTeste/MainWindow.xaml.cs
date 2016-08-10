@@ -42,7 +42,6 @@ using NFe.Danfe.Fast.NFCe;
 using NFe.Classes;
 using NFe.Classes.Informacoes.Identificacao.Tipos;
 using NFe.Danfe.Fast.NFe;
-using NFe.Danfe.Fast.NFe.FastReports;
 using NFe.Utils;
 using NFe.Utils.NFe;
 
